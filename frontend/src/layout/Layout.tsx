@@ -1,13 +1,15 @@
-import Header from '../components/Header/Header'
-import AppRoutes from '../routes/AppRoutes'
+import Footer from "../components/Footer/Footer";
+import Header from "../components/Header/Header";
+import AppRoutes from "../routes/AppRoutes";
 
 const Layout = () => {
   return (
     <div>
-      <Header/>
-      <AppRoutes/>
+      <Header />
+      <AppRoutes />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
