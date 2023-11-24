@@ -4,6 +4,7 @@ import Books from "../pages/Books";
 import Authors from "../pages/Authors";
 import BookDetails from "../pages/BookDetails";
 import Cart from "../pages/Cart";
+import Contact from "../pages/Contact";
 
 const AppRoutes = () => {
   return (
@@ -14,6 +15,7 @@ const AppRoutes = () => {
       <Route path="/authors" element={<Authors />} />
       <Route path="/book/:id" element={<BookDetails />} />
       <Route path="/cart" element={<Cart />} />
+      <Route path="/contact" element={<Contact />} />
     </Routes>
   );
 };
