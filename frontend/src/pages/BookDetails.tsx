@@ -8,18 +8,18 @@ const BookDetails = () => {
   const [quantity, setQuantity] = useState<number>(1);
   const { id } = useParams();
   const dispatch = useAppDispatch();
-  let book = books.filter((book) => book.id === Number(id))[0];
+  let book = books.filter((book) => book.id === Number(id))[0]||null;
 
   const handleAddToCart = () => {
     const payload = { book: book, quantity: quantity };
     dispatch(addToCart(payload));
   };
   return (
-    <section className="min-h-screen max-w-[1000px]">
+    <section className="min-h-screen">
       {!book ? (
         <h1 className="heading text-center">404 Book not found!!</h1>
       ) : (
-        <div className="px-[25px] md:px-[100px]">
+        <div className="px-[25px] md:px-[100px] max-w-[1000px]">
           <div className="flex flex-col items-center sm:flex-row gap-6 md:gap-12">
             <div>
               <img
