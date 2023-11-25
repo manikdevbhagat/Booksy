@@ -2,10 +2,6 @@ import alexImg from "../images/alex.jpg";
 import taraImg from "../images/tara.png";
 import deliaImg from "../images/delia.jpg";
 import kristinImg from "../images/krisitn.jpg";
-import celesteImg from "../images/celeste.jpg";
-import paulaImg from "../images/paula.jpg";
-import erinImg from "../images/erin.jpg";
-import michelleImg from "../images/michelle.jpg";
 import { Author } from "../../types";
 
 const authorsData: Author[] = [
