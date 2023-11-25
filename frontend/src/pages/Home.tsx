@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import heroImage from "../../public/hero_image.jpg";
-import featuredBook from "../../public/featured.jpg";
+import heroImage from "../assets/images/hero_image.jpg";
+import featuredBook from "../assets/images/featured.jpg";
 
 const Home = () => {
   return (
