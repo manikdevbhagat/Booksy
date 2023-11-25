@@ -4,6 +4,8 @@ import { BiMenu } from "react-icons/bi";
 import { GrBook } from "react-icons/gr";
 // import { RxAvatar } from "react-icons/rx";
 import { AiOutlineClose } from "react-icons/ai";
+import { IoCartOutline } from "react-icons/io5";
+import { useAppSelector } from "../../hooks/reduxhooks";
 
 const navLinks = [
   {
@@ -32,6 +34,7 @@ const Header = () => {
   const [showMenu, setShowMenu] = useState<Boolean>(false);
   const headerRef = useRef<HTMLElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
+  const { totalItems } = useAppSelector((state) => state.cart);
 
   const handleStickyHeader = () => {
     window.addEventListener("scroll", () => {
@@ -90,25 +93,24 @@ const Header = () => {
           </ul>
         </div>
         {/*Login/User Icon*/}
-        <div className="flex items-center gap-3">
-          <Link to={"/login"}>
-            <button
-              className=" bg-brownColor py-2 px-6 text-white font-[600] 
-              h-[44px] flex items-center justify-center rounded-[50px]"
-            >
-              Login
-            </button>
+        <div className="relative flex items-center gap-6 w-12 h-12 mr-4">
+          <Link to="/cart">
+            <IoCartOutline className="w-8 h-8" />
           </Link>
-          {/* <RxAvatar className="w-10 h-10" /> */}
-        </div>
-        <div className="md:hidden">
-          <span onClick={toggleMenu}>
-            {showMenu ? (
-              <AiOutlineClose className="w-6 h-6 cursor-pointer relative z-50" />
-            ) : (
-              <BiMenu className="w-6 h-6 cursor-pointer" />
-            )}
-          </span>
+          {totalItems > 0 && (
+            <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full top-0 right-0">
+              {totalItems}
+            </div>
+          )}
+          <div className="md:hidden">
+            <span onClick={toggleMenu}>
+              {showMenu ? (
+                <AiOutlineClose className="w-6 h-6 cursor-pointer relative z-50" />
+              ) : (
+                <BiMenu className="w-6 h-6 cursor-pointer" />
+              )}
+            </span>
+          </div>
         </div>
       </div>
     </header>
