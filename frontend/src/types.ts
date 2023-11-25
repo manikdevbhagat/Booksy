@@ -7,3 +7,15 @@ export interface Book {
   description: string;
   price: number;
 }
+
+export interface Author {
+  id: number;
+  image: string;
+  name: string;
+  description: string;
+  books: {
+    id: number;
+    title: string;
+  }[];
+}
+
